@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {  useNavigate  } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import "./style/app.scss";
 import logo from "./Online-shopping.png"
@@ -43,7 +44,6 @@ export default function AppBar() {
             const response = await axios.get("http://127.0.0.1:8000/api/products/search", {
                 params: {
                     name: searchValue, // Pass the search value as a query parameter
-                    
                     // you should handle this case how to know if the user search using name or desc or cats
                     // desc:searchValue
                   },
@@ -53,11 +53,12 @@ export default function AppBar() {
            console.log("response:",response.data.products)
             if (response.status === 200) {
                 setSearchResults(response.data.products)
+                navigate("/search",{state:searchResults}); // Redirect to the index page
             } else {
-              console.error('فشل في تحديث  searchالعدد');
+             
             }
           } catch (error) {
-            console.error('حدث خطأsearch أثناء :', error);
+            console.error('error:', error);
           }
 
     }

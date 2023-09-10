@@ -29,6 +29,8 @@ The Website Store project offers the following features:
 7. **Category Filtering**:
    - Users can filter products by category.
 
+8. **Search by name**
+   - user can search for products by name  
 ## Installation
 
 To set up and run the Website Store project locally, follow these steps:

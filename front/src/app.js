@@ -6,6 +6,7 @@ import Register from "./pages/register";
 import ProductDetails from "./pages/productdetails"
 import UserProfile from "./pages/userprofile";
 import Cart from "./pages/cart";
+import SearchReasult from "./pages/searchresult";
 import axios from "axios";
 export default function APP() {
   const token = localStorage.getItem('token');
@@ -41,6 +42,7 @@ export default function APP() {
         <Route index path="/" element={<HomePage addToCart={addToCart} />} />
         <Route path="/home" element={<HomePage addToCart={addToCart} />} />
         <Route path="login" element={<Login />} />
+        <Route path="search" element={<SearchReasult />} />
         <Route path="register" element={<Register />} />
         <Route path="details" element={<ProductDetails addToCart={addToCart} />} />
         <Route path="Profile" element={token ? <UserProfile /> : <Navigate to="/" />} />
