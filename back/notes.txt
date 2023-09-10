@@ -1,0 +1,13 @@
+API:
+
+// not auth
+1) Register - POST
+2) Login - POST
+3) Get Products - GET 
+
+// auth
+4) Create Order - POST
+5) User Details - GET
+6) Orders - GET
+// will not implemented  7) Modify Order - PUT 
+// will not implemented  8) Logout - POST
