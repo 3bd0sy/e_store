@@ -86,7 +86,7 @@ Here are the API endpoints used in this project:
  `/register` - User registration  
  `/login` - User login  
 
-- **Product Management**:
+- **Product Management**:  
  `/products` - Get a list of products  
 
 - **Shopping Cart**:    
@@ -94,18 +94,18 @@ Here are the API endpoints used in this project:
  `/updateorder/{order_id}/product/{product_id}` - Update product quantity in the order (requires authentication)   
  `/deletefromorder/{order_id}/product/{product_id}` - Delete a product from the order (requires authentication)   
 
-- **Profile Management**:
+- **Profile Management**:  
  `/user` - Get user profile information (requires authentication)  
 
-- **Order History**:
+- **Order History**:  
  `/orders` - Get user order history (requires authentication)  
 
-- **Category Management**:
+- **Category Management**:  
  `/categories` - Get a list of all product categories  
  `/products/category/{categoryId}` - Get products by category  
  `/products/search` - Search for products
 
-- **User Logout**:
+- **User Logout**:  
  `/logout` - User logout (requires authentication)
 
 ## Contact
