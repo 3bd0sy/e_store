@@ -34,8 +34,11 @@ The Website Store project offers the following features:
 To set up and run the Website Store project locally, follow these steps:
 
 1. **Clone the Repository**:
-
-2. **Install Dependencies**:
+-
+  ```
+  git clone https://github.com/3bd0sy/e_store
+  ```
+1. **Install Dependencies**:
 - Install PHP dependencies:
   ```
   composer install
@@ -45,61 +48,61 @@ To set up and run the Website Store project locally, follow these steps:
   npm install
   ```
 
-3. **Database Configuration**:
+1. **Database Configuration**:
 - Create a new database and configure the `.env` file with your database connection settings.
 
-4. **Migrate and Seed the Database**:
+1. **Migrate and Seed the Database**:
 - Run the following commands to create and seed the database tables:
   ```
   php artisan migrate
   php artisan db:seed
   ```
 
-5. **Generate Application Key**:
+1. **Generate Application Key**:
 - Generate a unique application key:
   ```
   php artisan key:generate
   ```
 
-6. **Start the Development Server**:
+1. **Start the Development Server**:
 - Run the development server:
   ```
   php artisan serve
   ```
-- Additionally, start the frontend development server (if not using a pre-built bundle):
+- Additionally, start the frontend development server :
   ```
-  npm run dev
+  npm start
   ```
 
-7. **Access the Website**:
+1. **Access the Website**:
 
-- Open your web browser and navigate to `http://localhost:8000` (or the URL specified by the development server).
+- Open your web browser and navigate to `http://localhost:8000`  
 
 ## API Endpoints
 
 Here are the API endpoints used in this project:
 
-- **User Authentication**:
- `/register` - User registration
- `/login` - User login
+- **User Authentication**:  
+ `/register` - User registration  
+ `/login` - User login  
 
 - **Product Management**:
- `/products` - Get a list of products
+ `/products` - Get a list of products  
 
-- **Shopping Cart**:
- `/orders` - Create an order (requires authentication)
- `/updateorder/{order_id}/product/{product_id}` - Update product quantity in the order (requires authentication)
- `/deletefromorder/{order_id}/product/{product_id}` - Delete a product from the order (requires authentication)
+- **Shopping Cart**:    
+ `/orders` - Create an order (requires authentication)   
+ `/updateorder/{order_id}/product/{product_id}` - Update product quantity in the order (requires authentication)   
+ `/deletefromorder/{order_id}/product/{product_id}` - Delete a product from the order (requires authentication)   
 
 - **Profile Management**:
- `/user` - Get user profile information (requires authentication)
+ `/user` - Get user profile information (requires authentication)  
 
 - **Order History**:
- `/orders` - Get user order history (requires authentication)
+ `/orders` - Get user order history (requires authentication)  
 
 - **Category Management**:
- `/categories` - Get a list of all product categories
- `/products/category/{categoryId}` - Get products by category
+ `/categories` - Get a list of all product categories  
+ `/products/category/{categoryId}` - Get products by category  
  `/products/search` - Search for products
 
 - **User Logout**:
