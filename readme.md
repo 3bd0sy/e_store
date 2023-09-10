@@ -1,4 +1,4 @@
-# Website Store Project README
+# E Store Project 
 
 Welcome to the E Store project! This web application is built using Laravel and React.js, allowing users to shop for products, create accounts, and manage their shopping experience. This README file provides essential information about the project, including installation instructions, features, and API endpoints.
 
