@@ -29,7 +29,7 @@ The Website Store project offers the following features:
 7. **Category Filtering**:
    - Users can filter products by category.
 
-8. **Search by name**
+8. **Search by name**:
    - user can search for products by name  
 ## Installation
 
@@ -40,7 +40,7 @@ To set up and run the Website Store project locally, follow these steps:
   ```
   git clone https://github.com/3bd0sy/e_store
   ```
-1. **Install Dependencies**:
+2. **Install Dependencies**:
 - Install PHP dependencies:
   ```
   composer install
@@ -50,23 +50,23 @@ To set up and run the Website Store project locally, follow these steps:
   npm install
   ```
 
-1. **Database Configuration**:
+3. **Database Configuration**:
 - Create a new database and configure the `.env` file with your database connection settings.
 
-1. **Migrate and Seed the Database**:
+4. **Migrate and Seed the Database**:
 - Run the following commands to create and seed the database tables:
   ```
   php artisan migrate
   php artisan db:seed
   ```
 
-1. **Generate Application Key**:
+5. **Generate Application Key**:
 - Generate a unique application key:
   ```
   php artisan key:generate
   ```
 
-1. **Start the Development Server**:
+6. **Start the Development Server**:
 - Run the development server:
   ```
   php artisan serve
@@ -76,7 +76,7 @@ To set up and run the Website Store project locally, follow these steps:
   npm start
   ```
 
-1. **Access the Website**:
+7. **Access the Website**:
 
 - Open your web browser and navigate to `http://localhost:8000`  
 
