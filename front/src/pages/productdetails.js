@@ -1,6 +1,7 @@
 import React from "react";
 import AppBar from "./appbar";
 import { useLocation } from "react-router-dom";
+import Footer from "./footer";
 
 export default function ProductDetails({ addToCart }) {
     const data = useLocation()
@@ -64,5 +65,6 @@ export default function ProductDetails({ addToCart }) {
                 </div>
             </div>
         </section>
+        <Footer/>
     </>
 }

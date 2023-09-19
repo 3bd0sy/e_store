@@ -2,24 +2,31 @@ import React from "react";
 import AppBar from "./appbar";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Footer from "./footer";
 
-export default function SearchReasult({addToCart}) {
+export default function SearchReasult({ addToCart }) {
     const data = useLocation()
-    console.log("data:",data)
-    const objproducts=data.state
+    console.log("data:", data)
+    const objproducts = data.state
     const products = Object.values(objproducts);
-    console.log("products:",products)
+    console.log("products:", products)
     return <>
         <div className="home page">
 
             <AppBar />
             <div class="container">
-            <h2 class="mt-3 container d-flex align-items-center justify-content-center">Search Results</h2>
-        </div>
+                <h2 class="mt-3 container d-flex align-items-center justify-content-center">Search Results</h2>
+            </div>
             <div className="body">
                 {
-                   Array.isArray(products)&& products.length === 0 ?
-                        <h1>no matching</h1>
+                    Array.isArray(products) && products.length === 0 ?
+                        <h1 class=" mt-3 container d-flex align-items-center justify-content-center" style={{ height: "450px" }}>
+                            <div class="alert alert-success" role="alert">
+                                <h4 class="mt-3 container d-flex align-items-center justify-content-center alert-heading">we didnt found any result!</h4>
+                                <p>try with another key word please</p>
+                                <hr />
+                            </div>
+                        </h1>
                         :
                         products.map(
                             el =>
@@ -28,10 +35,10 @@ export default function SearchReasult({addToCart}) {
                                     <div class="card-body">
                                         <h1 class="card-title">{el.name}</h1>
                                         {el.description ? (
-                                        <p class="card-text">{el.description.substring(0, 50)}</p>
-                                    ) : (
-                                        <p class="card-text">Description not available</p>
-                                    )}
+                                            <p class="card-text">{el.description.substring(0, 50)}</p>
+                                        ) : (
+                                            <p class="card-text">Description not available</p>
+                                        )}
                                         {/* <p class="card-text">{el.description.substring(0, 50)}</p> */}
                                         <a onClick={() => addToCart(el.id, el.cat_id)} class="btn btn-primary">Add To Cart</a>
                                         <Link to="/details" state={{ el }} class="ml-5 btn btn-warning">details</Link>
@@ -41,5 +48,6 @@ export default function SearchReasult({addToCart}) {
                 }
             </div>
         </div>;
+        <Footer />
     </>
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AppBar from "./appbar";
+import Footer from "./footer";
 
 
 export default function UserProfile() {
@@ -120,7 +121,7 @@ export default function UserProfile() {
 
 
 
-
+<Footer/>
     </>
 
 }

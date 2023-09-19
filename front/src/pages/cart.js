@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import AppBar from './appbar';
+import Footer from "./footer";
 
 
 const Cart = () => {
@@ -196,6 +197,7 @@ const Cart = () => {
         </div>
       </section>
     </div>
+<Footer/>
   </>
 };
 
