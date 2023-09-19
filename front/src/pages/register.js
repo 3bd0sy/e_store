@@ -23,7 +23,7 @@ export default function Register() {
     if (navigate) { return <Navigate to="/login" />; }
 
     return <>
-        <section class="vh-100" style={{ backgroundColor: " #eee" }}>
+        <section class="vh-100" style={{ backgroundColor: " #eee",overflowY:"hidden" }}>
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-lg-12 col-xl-11">
@@ -36,14 +36,14 @@ export default function Register() {
                                             <div class="d-flex flex-row align-items-center mb-4">
                                                 <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input name="name" onChange={e => setName(e.target.value)} type="text" id="form3Example1c" class="form-control" />
+                                                    <input placeholder="name@example.com" name="name" onChange={e => setName(e.target.value)} type="text" id="form3Example1c" class="form-control" />
                                                     <label class="form-label" for="form3Example1c">Your Name</label>
                                                 </div>
                                             </div>
                                             <div class="d-flex flex-row align-items-center mb-4">
                                                 <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input name="email" onChange={e => setEmail(e.target.value)} type="email" id="form3Example3c" class="form-control" />
+                                                    <input placeholder="your name" name="email"  autocomplete="off" onChange={e => setEmail(e.target.value)} type="email" id="form3Example3c" class="form-control" />
                                                     <label class="form-label" for="form3Example3c">Your Email</label>
                                                 </div>
                                             </div>
@@ -51,7 +51,7 @@ export default function Register() {
                                             <div class="d-flex flex-row align-items-center mb-4">
                                                 <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input name="password" onChange={e => setPassword(e.target.value)} type="password" id="form3Example4c" class="form-control" />
+                                                    <input placeholder="your password" name="password" onChange={e => setPassword(e.target.value)} type="password" id="form3Example4c" class="form-control" />
                                                     <label class="form-label" for="form3Example4c">Password</label>
                                                 </div>
                                             </div>
@@ -59,18 +59,18 @@ export default function Register() {
                                             <div class="d-flex flex-row align-items-center mb-4">
                                                 <i class="fas fa-key fa-lg me-3 fa-fw"></i>
                                                 <div class="form-outline flex-fill mb-0">
-                                                    <input name="repeated_password" onChange={e => setpassword_confirmation(e.target.value)} type="password" id="form3Example4cd" class="form-control" />
+                                                    <input placeholder="repeat password" name="repeated_password" onChange={e => setpassword_confirmation(e.target.value)} type="password" id="form3Example4cd" class="form-control" />
                                                     <label class="form-label" for="form3Example4cd">Repeat your password</label>
                                                 </div>
                                             </div>
 
                                             <div class="form-check d-flex justify-content-center mb-1">
-                                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                                                <input class="" style={{marginLeft:"-45px"}} type="checkbox" value="" id="form2Example3c" />
                                                 <label class="form-check-label" for="form2Example3">
-                                                    I agree all statements in <a href="#">Terms of service</a>
+                                                    I agree the <a href="#">Terms of service</a>
                                                 </label>
                                             </div>
-                                            <a href="/login" className=" mb-2 ml-5" > I'm already have account</a>
+                                            <a href="/login" className=" mb-1 ml-5" > I'm already have account</a>
 
                                             <div class="d-flex justify-content-center mt-4 mx-4 mb-3 mb-lg-4">
                                                 <a href="/home">

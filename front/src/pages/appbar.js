@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {  useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 import "./style/app.scss";
@@ -8,10 +8,16 @@ import axios from "axios";
 export default function AppBar() {
     const [searchValue, setSearchValue] = useState([])
     const [searchResults, setSearchResults] = useState([]); // Store search results
+    const [selectedValue, setSelectedValue] = useState("name"); 
+    const handleSelectChange = (event) => {
+      const newValue = event.target.value;
+      setSelectedValue(newValue);
+      console.log("setSelectedValue:",selectedValue)
+    };
     var loggedIn = null;
     const token = localStorage.getItem('token');
     const headers = {
-      'Authorization': `Bearer ${token}`,
+        'Authorization': `Bearer ${token}`,
     };
 
     const navigate = useNavigate(); // Get the navigate function
@@ -35,31 +41,26 @@ export default function AppBar() {
 
     async function handleSearch(e) {
         e.preventDefault();
-        console.log("searchValue:",searchValue)
-        const data={
-            name:searchValue
-        }
+        // console.log("setSelectedValue:",selectedValue)
+        // console.log("searchValue:", searchValue)
         try {
 
             const response = await axios.get("http://127.0.0.1:8000/api/products/search", {
                 params: {
-                    name: searchValue, // Pass the search value as a query parameter
-                    // you should handle this case how to know if the user search using name or desc or cats
-                    // desc:searchValue
-                  },
-                  headers 
-              })
+                    [selectedValue]: searchValue},
+                headers
+            })
 
-           console.log("response:",response.data.products)
+            console.log("response:", response.data.products)
             if (response.status === 200) {
                 setSearchResults(response.data.products)
-                navigate("/search",{state:searchResults}); // Redirect to the index page
+                navigate("/search", { state: searchResults }); // Redirect to the index page
             } else {
-             
+
             }
-          } catch (error) {
+        } catch (error) {
             console.error('error:', error);
-          }
+        }
 
     }
     return <div className="home page">
@@ -68,7 +69,7 @@ export default function AppBar() {
                 <img class="ml-5 mr-3" src={logo} width="100px" alt="" />
             </a>
             <a className="link" href="/home">home</a>
-            
+
             {loggedIn === false ? <>
                 <a className="link" href="/login">Login</a>
                 <a className="link" href="/register">Register</a>
@@ -84,6 +85,11 @@ export default function AppBar() {
                 <div class="container-fluid">
                     <form class="d-flex" role="search">
                         <input onChange={e => setSearchValue(e.target.value)} class="form-control me-2" type="search" placeholder="Search for product" aria-label="Search" />
+                        <select  onChange={handleSelectChange}  class="form-control" style={{width:"150px"}} aria-label="Default select example">
+                            <option selected value="name">Name</option>
+                            <option value="desc">Desc</option>
+                            <option value="3">Category</option>
+                        </select>
                         <button onClick={handleSearch} class="btn btn-outline-success" type="submit">Search</button>
                     </form>
                 </div>

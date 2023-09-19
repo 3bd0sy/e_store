@@ -34,13 +34,13 @@ export default function Login() {
                     <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
                         <form onSubmit={submit}>
                             <div style={{ marginLeft: "-80px" }} class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-                                <h1>welcome to  store name</h1>
+                                <h1>Welcome to E Store</h1>
                             </div>
                             <div class="divider d-flex align-items-center my-4">
                                 <p class="text-center fw-bold mx-3 mb-0"></p>
                             </div>
                             <div class="form-outline mb-4">
-                                <input name="email" placeholder="name@example.com"
+                                <input name="email"  autocomplete="off" placeholder="name@example.com"
                                     onChange={e => setEmail(e.target.value)}
                                     type="email" id="form3Example3" class="form-control form-control-lg" />
                                 <label class="form-label" for="form3Example3">Email address</label>

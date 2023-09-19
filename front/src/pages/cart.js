@@ -33,7 +33,7 @@ const Cart = () => {
         setTotal(totalCost);
         setTotalq(totalQYT);
         console.log("totalQYT:", totalQYT)
-        console.log(`التكلفة الكلية لكل المنتجات = $${totalCost}`);
+        console.log(`total= $${totalCost}`);
       } else {
       }
     } catch (error) {

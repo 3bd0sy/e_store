@@ -89,7 +89,7 @@ export default function UserProfile() {
                                         <p class="mb-0">Phone</p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <p class="text-muted mb-0">{userdata.phone}</p>
+                                        <p class="text-muted mb-0">+9639xxxxxxxx</p>
                                     </div>
                                 </div>
                                 <hr />
@@ -98,7 +98,7 @@ export default function UserProfile() {
                                         <p class="mb-0">Birth Day</p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <p class="text-muted mb-0">{userdata.birthDay}</p>
+                                        <p class="text-muted mb-0">1999/2/15</p>
                                     </div>
                                 </div>
 
@@ -108,7 +108,7 @@ export default function UserProfile() {
                                         <p class="mb-0">Address</p>
                                     </div>
                                     <div class="col-sm-9">
-                                        <p class="text-muted mb-0">{userdata.address}</p>
+                                        <p class="text-muted mb-0">syria / aleppo</p>
                                     </div>
                                 </div>
                             </div>
